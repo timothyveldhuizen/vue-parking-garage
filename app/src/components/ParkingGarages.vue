@@ -1,10 +1,23 @@
 <template>
-  <p>Parking Garages feature</p>
+<div>
+  <SearchPlace />
+  <SearchFilter />
+  <ParkingGarageList />
+</div>
 </template>
 
 <script>
+import SearchPlace from './SearchPlace';
+import SearchFilter from './SearchFilter';
+import ParkingGarageList from './ParkingGarageList';
+
 export default {
   name: 'ParkingGarages',
+  components: {
+    SearchPlace,
+    SearchFilter,
+    ParkingGarageList,
+  },
 }
 </script>
 

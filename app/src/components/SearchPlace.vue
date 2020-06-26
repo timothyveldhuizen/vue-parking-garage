@@ -1,5 +1,8 @@
 <template>
-  <p>Search Place feature</p>
+<div>
+  <label for="searchplace">Search place</label>
+  <input type="text" id="searchplace"/>
+</div>
 </template>
 
 <script>

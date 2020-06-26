@@ -1,11 +1,17 @@
 <template>
-  <p>Parking Garage Item feature</p>
+  <div>
+    <h1>{{parkingGarage.streetname}} {{parkingGarage.housenumber}}</h1>
+    <h2>{{parkingGarage.zipcode}} {{parkingGarage.place}}</h2>
+    <h3>{{parkingGarage.province}}</h3>
+    <p>{{parkingGarage.parkingaddresstype}}</p>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'ParkingGarageItem',
-}
+  name: "ParkingGarageItem",
+  props: ["parkingGarage"]
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

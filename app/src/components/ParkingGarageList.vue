@@ -1,7 +1,8 @@
 <template>
 <div>
-  <p>Parking Garage List feature</p>
-  <ParkingGarageItem />
+  <p>Parking Garages</p>
+  <span>Number of results {{list.length}}</span>
+  <ParkingGarageItem v-for="item in list" :key="item.parkingaddressreferencetype + item.parkingaddressreference + item.parkingaddresstype" :parking-garage="item" />
 </div>
 </template>
 
@@ -10,6 +11,7 @@ import ParkingGarageItem from './ParkingGarageItem';
 
 export default {
   name: 'ParkingGarageList',
+  props: ['list'],
   components: {
       ParkingGarageItem,
   }

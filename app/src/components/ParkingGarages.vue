@@ -2,7 +2,7 @@
 <div>
   <SearchPlace />
   <SearchFilter />
-  <ParkingGarageList />
+  <ParkingGarageList :list="listParkingGarages" />
 </div>
 </template>
 
@@ -10,9 +10,15 @@
 import SearchPlace from './SearchPlace';
 import SearchFilter from './SearchFilter';
 import ParkingGarageList from './ParkingGarageList';
+import dataParkingGarageList from '../data/DataParkingGarageList';
 
 export default {
   name: 'ParkingGarages',
+  data() {
+    return {
+      listParkingGarages: dataParkingGarageList,
+    }
+  },
   components: {
     SearchPlace,
     SearchFilter,

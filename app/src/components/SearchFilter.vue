@@ -1,5 +1,8 @@
 <template>
-  <p>Search Filter feature</p>
+<div>
+  <label for="searchfilter">Search filter</label>
+  <input type="checkbox" id="searchfilter"/>
+</div>
 </template>
 
 <script>

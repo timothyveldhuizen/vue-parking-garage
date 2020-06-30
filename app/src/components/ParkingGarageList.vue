@@ -1,6 +1,5 @@
 <template>
 <div>
-  <p>Parking Garages</p>
   <span>Number of results {{list.length}}</span>
   <ParkingGarageItem v-for="item in list" :key="item.parkingaddressreferencetype + item.parkingaddressreference + item.parkingaddresstype" :parking-garage="item" />
 </div>

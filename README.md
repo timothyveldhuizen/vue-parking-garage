@@ -8,6 +8,7 @@ In this project Vue cli is installed as dev dependency of npm.
 To create a new app run `"npx vue create my-app-name"` with default settings.
 Then a new folder will appear with a skeleton Vue app.
 Go to the folder `"cd my-app-name"` and run the app with Yarn `"npx yarn serve"`
+(Or do `npm start` and it will do the above for you)
 
 ## Components
 
@@ -24,8 +25,34 @@ Go to the folder `"cd my-app-name"` and run the app with Yarn `"npx yarn serve"`
 - ParkingGarageList: static data from external source (json)
 - ParkingGarageItem: static data from external source (json)
 
+External source is open data from RDW containing parking garage information: [Open Data Parkeren: PARKEERADRES](https://opendata.rdw.nl/Parkeren/Open-Data-Parkeren-PARKEERADRES/ygq4-hh5q)
+
 ## Challenge
 
 The challenge is to build with Vue above components with a correct component communication.
 That means data flows down with props or data flows up with events between components.
 And having the state / data in the correct components.
+
+### Implementation
+
+```
+-ParkingGarages
+--SearchPlace
+--SearchFilter
+--ParkingGarageList
+---ParkingGarageItem
+```
+
+#### ParkingGarages
+
+This (smart) component contains the data of the search, filter and list of parking garages. It only listens to events received from SearchPlace and SearchFilter and when changed it filters the list of parking garages.
+
+#### SearchPlace and SearchFilter
+
+These presentational components have some data like place or filter types to handle the inputs and presentation.
+After every change of data an event is emitted to the parent ParkingGarages.
+Note: Maybe you could remove the data() and pass props to these components from the parent? So that the data is all in the parent.
+
+#### ParkingGarageList and ParkingGarageItem
+
+These (dumb) presentational components only receive props and display it.

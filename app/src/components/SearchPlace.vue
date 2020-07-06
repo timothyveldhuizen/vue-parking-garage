@@ -8,11 +8,7 @@
 <script>
 export default {
   name: 'SearchPlace',
-  data() {
-    return {
-      searchQuery: '',
-    }
-  },
+  props: ['searchText'],
   methods: {
     onInputTextChange() {
       this.$emit('handleSearchTextChange', this.searchQuery);

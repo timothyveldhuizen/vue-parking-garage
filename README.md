@@ -49,9 +49,9 @@ This (smart) component contains the data of the search, filter and list of parki
 
 #### SearchPlace and SearchFilter
 
-These presentational components have some data like place or filter types to handle the inputs and presentation.
-After every change of data an event is emitted to the parent ParkingGarages.
-Note: Maybe you could remove the data() and pass props to these components from the parent? So that the data is all in the parent.
+These (dumb) presentational components receive props like place or filter types to handle the inputs and presentation.
+After every input change an event is emitted to the parent ParkingGarages.
+You could remove the props and add data() to these components, so the data of the component itself is moved from parent to the child.
 
 #### ParkingGarageList and ParkingGarageItem
 

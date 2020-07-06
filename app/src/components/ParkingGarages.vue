@@ -1,8 +1,8 @@
 <template>
 <div>
   <h1>Parking Garages</h1>
-  <SearchPlace @handleSearchTextChange="onSearchTextChange" />
-  <SearchFilter @handleSearchFilterChange="onSearchFilterChange" />
+  <SearchPlace :searchText="searchPlace" @handleSearchTextChange="onSearchTextChange" />
+  <SearchFilter :parkingFilterTypes="filterType" @handleSearchFilterChange="onSearchFilterChange" />
   <ParkingGarageList :list="filteredListParkingGarages" />
 </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      filterPlace: '',
+      searchPlace: '',
       filterType: [],
       listParkingGarages: dataParkingGarageList,
     }
@@ -30,13 +30,13 @@ export default {
   computed: {
     filteredListParkingGarages() {
       return dataParkingGarageList
-        .filter(item => item.place ? item.place.toLowerCase().includes(this.filterPlace.toLowerCase()) : false)
+        .filter(item => item.place ? item.place.toLowerCase().includes(this.searchPlace.toLowerCase()) : false)
         .filter(item => item.parkingaddresstype ? this.filterType.includes(item.parkingaddresstype) : false)
     }
   },
   methods: {
     onSearchTextChange(place) {
-      this.filterPlace = place;
+      this.searchPlace = place;
     },
     onSearchFilterChange(parkingFilterTypes) {
       this.filterType = parkingFilterTypes;

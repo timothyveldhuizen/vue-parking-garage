@@ -12,11 +12,7 @@
 <script>
 export default {
   name: 'SearchFilter',
-  data() {
-    return {
-      parkingFilterTypes: [],
-    }
-  },
+  props: ['parkingFilterTypes'],
   watch: {
     parkingFilterTypes: {
       handler: function(newValue) {

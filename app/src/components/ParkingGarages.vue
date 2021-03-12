@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       searchPlace: '',
-      filterType: [],
+      filterType: ['F'],
       listParkingGarages: dataParkingGarageList,
     }
   },

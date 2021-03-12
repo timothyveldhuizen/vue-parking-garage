@@ -1,4 +1,4 @@
-# vue-parking-garage
+# app
 
 ## Project setup
 ```

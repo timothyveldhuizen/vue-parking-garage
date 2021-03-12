@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/timothyveldhuizen/vue-parking-garage#readme",
   "devDependencies": {
-    "@vue/cli": "^4.4.4"
+    "@vue/cli": "^4.5.11"
   }
 }

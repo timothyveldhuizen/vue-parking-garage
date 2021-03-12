@@ -2,7 +2,7 @@
 <div>
   <h1>Parking Garages</h1>
   <SearchPlace :searchText="searchPlace" @handleSearchTextChange="onSearchTextChange" />
-  <SearchFilter parkingFilterTypes="filterType" @handleSearchFilterChange:parkingFilterTypes="onSearchFilterChange" />
+  <SearchFilter :parkingFilterTypes="filterType" @handleSearchFilterChange="onSearchFilterChange" />
   <ParkingGarageList :list="filteredListParkingGarages" />
 </div>
 </template>
